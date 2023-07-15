@@ -48,7 +48,6 @@ export const getPostsBySearch = async (req, res) => {
 
 // with post request, you have the access to something known as a req.body
 export const createPost = async (req, res) => {
-    // console.log(req);
     const post = req.body;
     const newPost = new PostMessage({ ...post, creator: req.userId, createdAt: new Date().toISOString() })
     try {
